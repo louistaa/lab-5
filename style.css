@@ -1,0 +1,27 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #202021;
+}
+
+.brand {
+  color: #C3C3CA;
+  padding: 1rem;
+  font-size: 60px;
+  letter-spacing: 2px;
+  font-weight: 300;
+  font-family: 'Lato', sans-serif;
+}
+
+.card {
+  background: rgba(0, 0, 0, 0.55);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 10px;
+  color: white;
+  font-weight: 300;
+  font-family: Helvetica, sans-serif;
+}
