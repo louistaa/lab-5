@@ -1,8 +1,3 @@
-// anything that changes that you need to keep track of goes into state
-let state = {
-  minimumStars: 0
-}
-
 // one object containing an array of objects, exactly how JSON is structured
 let data = {
   places: [
@@ -50,18 +45,8 @@ function renderCards() {
   linkToRow.innerHTML = "";
 
   data.places.forEach(function(place) {
-    // filtering the cards
-    if (place.stars >= state.minimumStars) {
-      linkToRow.appendChild(createCard(place));
-    }
+    linkToRow.appendChild(createCard(place));
   });
 }
-
-// add eventlistener to slider to update state
-let LinkToSlider = document.querySelector('#formControlRange');
-LinkToSlider.addEventListener('change', function() {
-  state.minimumStars = LinkToSlider.value;
-  renderCards();
-})
 
 renderCards(); // default view
