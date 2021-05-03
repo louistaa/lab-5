@@ -1,20 +1,23 @@
 // anything that changes that you need to keep track of goes into state
 let state = {
+  data: {},
   minimumStars: 0
 }
 
-// one object containing an array of objects, exactly how JSON is structured
-let data = {
-  places: [
-    {id: 1, name: "McDonald's", stars: 4},
-    {id: 2, name: "Shake Shack", stars: 5},
-    {id: 3, name: "In and Out", stars: 5},
-    {id: 4, name: "Arby's", stars: 3},
-    {id: 5, name: "Wendy's", stars: 4},
-    {id: 6, name: "Jack In the Box", stars: 2},
-    {id: 7, name: "iHop", stars: 1},
-  ]
-}
+fetch('data.json')
+  .then((response) => {
+    return response.json();
+  })
+  .then((data) => {
+    state.data = data;
+    console.log(state.data);
+
+    renderCards();
+  })
+  .catch((error) => {
+    console.error(error);
+  }) 
+
 
 // create a single card using vanilla js
 function createCard(aSinglePlace) {
@@ -49,7 +52,7 @@ function renderCards() {
   let linkToRow = document.querySelector('#feed')
   linkToRow.innerHTML = "";
 
-  data.places.forEach(function(place) {
+  state.data.places.forEach(function(place) {
     // filtering the cards
     if (place.stars >= state.minimumStars) {
       linkToRow.appendChild(createCard(place));
@@ -63,5 +66,3 @@ LinkToSlider.addEventListener('change', function() {
   state.minimumStars = LinkToSlider.value;
   renderCards();
 })
-
-renderCards(); // default view

@@ -1,0 +1,11 @@
+{
+  "places": [
+    {"id": 1, "name": "McDonald's", "stars": 4},
+    {"id": 2, "name": "Shake Shack", "stars": 5},
+    {"id": 3, "name": "In and Out", "stars": 5},
+    {"id": 4, "name": "Arby's", "stars": 3},
+    {"id": 5, "name": "Wendy's", "stars": 4},
+    {"id": 6, "name": "Jack In the Box", "stars": 2},
+    {"id": 7, "name": "iHop", "stars": 1}
+  ]
+}
