@@ -1,0 +1,6 @@
+{
+  "places": [
+    { "id": 1, "name": "McDonald's", "stars": 4 },
+    { "id": 2, "name": "Shake Shack", "stars": 5 }
+  ]
+}
